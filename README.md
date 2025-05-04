@@ -1,4 +1,4 @@
-# Parking Lot Management System - Low-Level Design (LLD)
+# Parking Lot Management System - Low-Level Design
 
 ## Table of Contents
 

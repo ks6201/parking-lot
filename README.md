@@ -14,11 +14,11 @@
 
 ## Introduction
 
-This ParkingLot system is designed to manage parking operations, including vehicle entry and exit, real-time parking availability updates, and parking fee calculations. The system automatically assigns parking spots based on vehicle types (motorcycle, car, bus), handles check-ins and check-outs, and calculates the parking fee based on the duration of the stay.
+This ParkingLot system is designed to manage parking operations, including vehicle entry and exit, real-time parking availability updates, and parking fee calculations. The system automatically assigns parking spots based on vehicle types (motorcycle, car, bus), handles entries and exits, and calculates the parking fee based on the duration of the stay.
 
 The system allows for:
 - **Parking Spot Allocation**: Allocate parking spots based on vehicle type (MotorCycle, Car, Bus).
-- **Check-in/Check-out System**: Vehicles can check in and check out with a ticket.
+- **Entry/Exit System**: Vehicles can entry and exit with a ticket.
 - **Billing System**: Calculates the parking fee based on the vehicle type and time parked.
 - **Real-Time Availability Updates**: Tracks and updates parking spot availability.
 
@@ -31,13 +31,13 @@ The system allows for:
 1. **Parking Spot Allocation**
    - Parking spots are divided by vehicle type (MotorCycle, Car, Bus).
    - Each parking floor has a predefined number of spots.
-   - When a vehicle checks in, an available spot is assigned to it.
-   - When a vehicle checks out, the spot is marked as available again.
+   - When a vehicle enters, an available spot is assigned to it.
+   - When a vehicle exits, the spot is marked as available again.
 
 2. **Check-In/Check-Out**
-   - A vehicle can check into the parking lot if there is an available spot.
-   - A parking ticket is issued upon check-in, which contains details like the vehicle's information, parking spot, and parking floor.
-   - A vehicle can check out, and the parking spot becomes vacant.
+   - A vehicle can enter into the parking lot if there is an available spot.
+   - A parking ticket is issued upon entry, which contains details like the vehicle's information, parking spot, and parking floor.
+   - A vehicle can exit, and the parking spot becomes vacant.
 
 3. **Parking Fee Calculation**
    - Fees are calculated based on the vehicle type and the duration the vehicle was parked.
@@ -50,7 +50,7 @@ The system allows for:
 ### Non-Functional Requirements
 
 - **Scalability**: The system should handle the allocation of parking spots for various types of vehicles efficiently.
-- **Concurrency**: The system should support concurrent check-ins/check-outs without conflicts.
+- **Concurrency**: The system should support concurrent entries/exits without conflicts.
 - **Extensibility**: The system should be easily extensible to support additional vehicle types, parking floors, or billing strategies.
 
 ---
@@ -111,7 +111,7 @@ To efficiently assign parking spots to incoming vehicles, by maintaining a **vac
 
 #### **Concurrency Handling**
 
-To handle simultaneous check-ins and check-outs, especially in async event-driven environment:
+To handle simultaneous entries and exits, especially in async event-driven environment:
 
 * It uses **`@d3vtool/mutex`** library to ensure safe mutation of in-memory data structures (e.g., queues and spot states, floors).
 * This prevents **race conditions** and ensures **data integrity** when multiple vehicles interact with the same parking floor or spot concurrently.

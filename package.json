@@ -1,0 +1,19 @@
+{
+  "name": "parking-lot-system",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "vitest": "^3.1.2"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "scripts": {
+    "test": "vitest"
+  },
+  "dependencies": {
+    "@d3vtool/mutex": "^1.1.1",
+    "@d3vtool/secid": "^1.1.7"
+  }
+}

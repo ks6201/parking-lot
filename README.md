@@ -1,4 +1,4 @@
-# Parking Lot Management System - Low-Level Design
+# Parking Lot - Low-Level Design
 
 ## Table of Contents
 

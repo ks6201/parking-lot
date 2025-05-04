@@ -142,10 +142,10 @@ Below is an overview of the key classes and their relationships:
 
 ### 1. Clone the Repository
 
-    ```bash
-    git clone https://github.com/ks6201/parking-lot
-    cd parking-lot
-    ```
+```bash
+git clone https://github.com/ks6201/parking-lot
+cd parking-lot
+```
 
 ### 2. Install Dependencies
 

@@ -59,9 +59,9 @@ The system allows for:
 
 ### Assumptions
 - **Multi-Storey Parking Structure**: The design assumes that the parking lot is a multi-storey building, with each vehicle type having a collection of floors dedicated to it. 
-  - **Motorcycles**: Lower floors.
+  - **Buses**: Lower floors.
   - **Cars**: Middle floors.
-  - **Buses**: Upper floors.
+  - **Motorcycles**: Upper floors.
 - Each floor consists of multiple parking spots, and these floors are grouped based on the vehicle type.
 
 ### Overview

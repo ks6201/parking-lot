@@ -135,6 +135,9 @@ Below is an overview of the key classes and their relationships:
 
 ### 3. **State Pattern**
    - The **BillingMachine** uses the **State Pattern** to manage different stages of the payment process (e.g., Idle, Waiting for Payment, Payment Received).
+
+### 4. **Singleton**
+   - **Singleton Pattern** is applied to ensure only one instance of the ParkingManager is created, allowing the same manager to handle any number of gates for both entry and exit.
    
 ---
 

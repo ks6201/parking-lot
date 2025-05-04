@@ -34,7 +34,7 @@ The system allows for:
    - When a vehicle enters, an available spot is assigned to it.
    - When a vehicle exits, the spot is marked as available again.
 
-2. **Check-In/Check-Out**
+2. **Entry/Exit**
    - A vehicle can enter into the parking lot if there is an available spot.
    - A parking ticket is issued upon entry, which contains details like the vehicle's information, parking spot, and parking floor.
    - A vehicle can exit, and the parking spot becomes vacant.

@@ -92,19 +92,19 @@ The system consists of several key components:
 ### Key Interactions
 
 - When a vehicle enters the parking lot, a **ParkingFloor** is selected based on the vehicle type.
-- The **ParkingFloor** allocates a **ParkingSpot** using the **Mutex** to ensure thread-safety during allocation.
+- The **ParkingFloor** allocates a **ParkingSpot** using the **Mutex** to ensure no race during allocation.
 - A **ParkingTicket** is issued, capturing the vehicle's details, spot number, and entry time.
 - When the vehicle checks out, the **ParkingSpot** is marked vacant.
 - The **Billing** system calculates the fee based on the vehicle type and parking duration.
 - The **State Pattern** is used to manage the payment process, ensuring the system transitions between payment stages correctly.
 
-### How We Handle: Spot Allocation & Concurrency
+### Spot Allocation & Concurrency
 
 #### **Algorithm for Spot Allocation**
 
-To efficiently assign parking spots to incoming vehicles, we maintain a **vacant index queue** for each parking floor. Here's how it works:
+To efficiently assign parking spots to incoming vehicles, by maintaining a **vacant index queue** for each parking floor. Here's how it works:
 
-* **Vacant Index Queue**: A queue tracks the indices of available parking spots (`vacantIndexQueue`).
+* **Vacant Index Queue**: A queue tracks the indices of available parking spots (`_vacantSpotQueue`).
 * **Spot Assignment**: When a vehicle checks in, the system dequeues an index from the queue and assigns that spot to the vehicle.
 * **Spot Release**: Upon vehicle exit, the freed spot's index is re-enqueued to maintain availability.
 * **Efficiency**: This approach ensures `O(1)` time complexity for both spot assignment and release, keeping the system performant even under high load.
